@@ -12,7 +12,9 @@
 - (void)getAPNSToken:(CDVInvokedUrlCommand*)command;
 - (NSString *)hexadecimalStringFromData:(NSData *)data;
 - (void)grantPermission:(CDVInvokedUrlCommand*)command;
+- (void)grantPermissionProvisional:(CDVInvokedUrlCommand*)command;
 - (void)hasPermission:(CDVInvokedUrlCommand*)command;
+- (void)hasPermissionProvisional:(CDVInvokedUrlCommand*)command;
 - (void)setBadgeNumber:(CDVInvokedUrlCommand*)command;
 - (void)getBadgeNumber:(CDVInvokedUrlCommand*)command;
 - (void)subscribe:(CDVInvokedUrlCommand*)command;
