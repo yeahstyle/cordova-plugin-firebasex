@@ -198,6 +198,23 @@ exports.setCrashlyticsUserId = function (userId, success, error) {
     exec(success, error, "FirebasePlugin", "setCrashlyticsUserId", [userId]);
 };
 
+// grant permissions
+exports.grantPermissionProvisional = function (success, error) {
+  exec(success, error, "FirebasePlugin", "grantPermissionProvisional", []);
+};
+
+exports.hasPermission = function (success, error) {
+  exec(success, error, "FirebasePlugin", "hasPermission", []);
+};
+
+exports.hasPermissionProvisional = function (success, error) {
+  exec(success, error, "FirebasePlugin", "hasPermissionProvisional", []);
+};
+
+// Android-only
+exports.setDefaultChannel = function (options, success, error) {
+    exec(success, error, "FirebasePlugin", "setDefaultChannel", [options]);
+
 
 // Authentication
 exports.verifyPhoneNumber = function (success, error, number, timeOutDuration, fakeVerificationCode) {
