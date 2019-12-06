@@ -68,8 +68,16 @@ exports.grantPermission = function (success, error) {
     exec(ensureBoolean(success), error, "FirebasePlugin", "grantPermission", []);
 };
 
+exports.grantPermissionProvisional = function (success, error) {
+    exec(ensureBoolean(success), error, "FirebasePlugin", "grantPermissionProvisional", []);
+};
+
 exports.hasPermission = function (success, error) {
     exec(ensureBoolean(success), error, "FirebasePlugin", "hasPermission", []);
+};
+
+exports.hasPermissionProvisional = function (success, error) {
+    exec(ensureBoolean(success), error, "FirebasePlugin", "hasPermissionProvisional", []);
 };
 
 // Notifications - Android-only

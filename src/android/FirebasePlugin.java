@@ -130,7 +130,16 @@ public class FirebasePlugin extends CordovaPlugin {
             } else if (action.equals("hasPermission")) {
                 this.hasPermission(callbackContext);
                 return true;
-            }else if (action.equals("subscribe")) {
+            } else if (action.equals("hasPermissionProvisional")) {
+              this.hasPermission(callbackContext);
+              return true;
+            // } else if (action.equals("setBadgeNumber")) {
+            //   this.setBadgeNumber(callbackContext, args.getInt(0));
+            //   return true;
+            // } else if (action.equals("getBadgeNumber")) {
+            //   this.getBadgeNumber(callbackContext);
+            //   return true;
+            } else if (action.equals("subscribe")) {
                 this.subscribe(callbackContext, args.getString(0));
                 return true;
             } else if (action.equals("unsubscribe")) {
@@ -247,6 +256,9 @@ public class FirebasePlugin extends CordovaPlugin {
                     || action.equals("getBadgeNumber")
             ) {
                 // Stubs for other platform methods
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, true));
+                return true;
+            } else if (action.equals("grantPermissionProvisional")) {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, true));
                 return true;
             }
