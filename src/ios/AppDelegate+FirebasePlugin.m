@@ -149,7 +149,7 @@ static NSDictionary* mutableUserInfo;
         NSDictionary* aps = [mutableUserInfo objectForKey:@"aps"];
         bool isContentAvailable = false;
         if([aps objectForKey:@"alert"] != nil){
-            bool isContentAvailable = [[aps objectForKey:@"content-available"] isEqualToString:@"1"];
+            isContentAvailable = [[aps objectForKey:@"content-available"] isEqualToNumber:[NSNumber numberWithInt:1]];
             [mutableUserInfo setValue:@"notification" forKey:@"messageType"];
             NSString* tap;
             if([self.applicationInBackground isEqual:[NSNumber numberWithBool:YES]] && !isContentAvailable){
@@ -333,7 +333,7 @@ static NSDictionary* mutableUserInfo;
         NSLog(@"willPresentNotification: %@", mutableUserInfo);
         
         NSDictionary* aps = [mutableUserInfo objectForKey:@"aps"];
-        bool isContentAvailable = [[aps objectForKey:@"content-available"] isEqualToString:@"1"];
+        bool isContentAvailable = [[aps objectForKey:@"content-available"] isEqualToNumber:[NSNumber numberWithInt:1]];
         if(isContentAvailable){
             [FirebasePlugin.firebasePlugin _logError:@"willPresentNotification: aborting as content-available:1 so system notification will be shown"];
             return;
